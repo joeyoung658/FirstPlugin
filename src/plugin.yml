@@ -1,0 +1,407 @@
+name: FirstPlugin
+version: 4
+author: Origin
+main: England.Origin.FirstPlugin.Main
+api-version: 1.16
+commands:
+  vote:
+      description: This command shows the voting information.
+      usage: /<command>
+      aliases: [voting]
+  colours:
+      description: This command shows the minecraft colour codes.
+      usage: /<command>
+      permission: <FP>.ColourCodesChat
+      permission-message: This is a VIP only command!
+      aliases: [colors, colour, color]
+  donate:
+      description: This command shows the Donating information.
+      usage: /<command>
+      aliases: [rank, ranks]
+  rules:
+      description: Server Rules
+      usage: /rules
+  tips:
+      description: Server Tips
+      usage: /tips
+  FP-Reload:
+      description: Reload FP Config
+  prefix:
+      description: All prefix commands
+      aliases: [customprefix, removeprefix, restoreprefix]
+  sc:
+      description: Staff Chat
+  dc:
+      description: Donor Chat
+  spawn:
+      description: Telports user to spawn
+  ask:
+      description: Aks online staff a question!
+      usage: /<command>
+  answer:
+      description: Answers a question
+      useage: /<command>
+      permission: <FP>.answer
+      permission-message: This is a admin only command!
+  ping:
+      description: Pings the server
+      useage: /<command>
+  pong:
+      description: Pings the server
+      useage: /<command>
+  discord:
+      description: Information about discord
+      useage: /<command>
+  website:
+      description: Information about website
+      useage: /<command>
+  clear:
+      description: Nothing
+      permission: nothing
+  pardon:
+      description: Nothing
+      permission: nothing
+  poke:
+      description: Pokes the server
+      useage: /<command>
+  suicide:
+      description: Enables a user to kill them selfs.
+  nick:
+      description: Enables a user to give them selfs a nick name.
+  removenick:
+      description: Enables a user to remove a nick name
+  gamemode:
+      description: This command allows the change of gamemode
+      aliases: [gm]
+  fly:
+      description: THis command enables the toggle of fly
+  god:
+        description: THis command enables the toggle of god mode
+  vanish:
+      description: THis command enables the toggle of vanish
+      aliases: [v]
+  pweather:
+      description: THis command enables the change of player weather
+  heal:
+      description: Heals a player to full Health
+  workbench:
+      description: Enables a user to use a crafting table
+      aliases: [wb,craft,crafting,create, ct, craftingtable]
+  enderchest:
+      description: Enables user to open a enderchest.
+  staff:
+      description: View online staff
+  ignore:
+      description: Allows a player to ignore another player!
+      aliases: [unignore,delignore,remignore,rmignore]
+  clearinven:
+      description: Allows a player to clear items from inventory!
+      aliases: [ci]
+  invsee:
+      description: Enables a user to view other players inven
+  warp:
+      description: Enables a user to tp to a set warp
+      aliases: [warps]
+  setwarp:
+      description: Enables a user to to set a warp
+  delwarp:
+      description: Enables a user to to remove a warp
+  getuuid:
+      description: Enables a user to to get a players uuid
+  skull:
+      description: Enables a user to to get a players head
+  me:
+      description: Enables a user to rollplay
+      aliases: [action,describe]
+  togglekeepinven:
+      description: Enables a toggle keep inven
+  fake:
+      description: Enables admins to send a fake join/leave message
+  sudo:
+      description: Enables admins to send a fake join/leave message
+  seen:
+      description: Enables an admin to view details about a player
+  back:
+      description: Allows a player to tp to last tp location
+  broadcast:
+      description: Allows a admin to broadcast a message
+      aliases: [announcement]
+  tpo:
+      description: Force teleports to a player without them knowing!
+  msg:
+      description: Sends a private message to another user
+      aliases: [m,t,w,tell,whisper,pm]
+  reply:
+      description: Sends a private message to another user
+      aliases: [r,respond]
+  afk:
+      description: Enables a player to toggle afk
+  list:
+      description: View online players
+      aliases: [online,playerlist,plist,who]
+  home:
+      description: Teleport to a home
+      aliases: [homes]
+  togglekeepxp:
+      description: Enables a user to toggle if they keep XP or not
+  sethome:
+      description: Enables a user to set a new home
+  delhome:
+      description: Enables a user to remove a home
+  ahome:
+      description: Enables a admin to increase/decrease home amount
+  tpa:
+      description: Enables users to request to teleport to each other
+  tpahere:
+      description: Enables a user to request to teleport to them
+  tpyes:
+      description: Accepts a tpa request
+      aliases: [tpaaccept,tpayes]
+  tpdeny:
+      description: Accepts a tpa request
+      aliases: [tpadeny,tpno]
+  tptoggle:
+      description: Toggles tpa requests
+  hat:
+      description: Put any item on head
+  bc:
+      description: Builder Chat
+  togglepvp:
+      description: Enables user to toggle pvp mode
+      aliases: [pvpon,pvpoff,pvpenable,pvpdisbale,enablepvp,disablepvp]
+  voteperks:
+      description: View all the rewards from voting
+  censor:
+      description: Allows players to block certain words from thier chat
+  thor:
+      description: Allows players to smite another
+  tableflip:
+      description: Allows a player to flip a table
+  unflip:
+      description: Allows a player to unflip a table
+  speed:
+      description: Allows a player to set thier flying/walking speed
+  restoreinven:
+      description: Ability to restore a players inventory
+  ptime:
+      description: THis command enables the change of player time
+  rtp:
+      description: Random telport
+  toggleendportal:
+      description: Turns the end portal on and off
+  togglesleepbypass:
+      description: Turns the bypass sleep functionality on & off
+  getcords:
+      permission: <FP>.getcords
+      permission-message: This is a admin only command!
+  permissions:
+    fpreload.reload:
+      description: 'gives access to /fp reload command'
+      default: op
+    mobegg.override:
+      description: 'Override mob egg spawner blocker'
+      default: op
+    <FP>.AC:
+      description: 'Access to talk in staff chat'
+      default: op
+    <FP>.AC.R:
+      description: 'Access to staff chat messages'
+      default: op
+    <FP>.DC:
+      description: 'Access to talk in donor chat'
+      default: op
+    <FP>.DC.R:
+      description: 'Access to  donor chat messages'
+      default: op
+    <FP>.SPAWN:
+      description: 'Access to spawn'
+      default: op
+    <FP>.BYPASS.TPCOOL:
+      description: 'Ability to bypass spawn timer'
+      default: op
+    <FP>.dchat:
+      description: 'Ability to disable chat'
+      default: op
+    <FP>.BYPASST:
+      description: 'Ability to bypass anvil cool down'
+      default: op
+    <FP>.BYPASSCP:
+      description: 'Ability to bypass admin prefix prevention'
+      default: op
+    <FP>.keepinven:
+      description: 'Keeps inventory on death'
+      default: op
+    <FP>.keepxp:
+      description: 'Keeps XP on death'
+      default: op
+    <FP>.ColourCodesChat:
+      description: 'Enables user to use colour codes in chat'
+      default: op
+    <FP>.nick:
+      description: 'Enables user to user to have a nick name'
+      default: op
+    <FP>.anick:
+      description: 'Enables admin to remove a users nick'
+      default: op
+    prefix.mod:
+      description: 'Sets prefix for moderator'
+    prefix.admin:
+      description: 'Sets prefix for admin'
+    prefix.builder:
+      description: 'Sets prefix for builder'
+    prefix.helper:
+      description: 'Sets prefix for helper'
+    prefix.diamond:
+      description: 'Sets prefix for admin'
+    prefix.gold:
+      description: 'Sets prefix for builder'
+    prefix.iron:
+      description: 'Sets prefix for helper'
+    prefix.botm:
+      description: 'Sets prefix for builder'
+    prefix.top_voter:
+      description: 'Sets prefix for helper'
+    prefix.one:
+      description: 'Sets prefix for builder'
+    prefix.two:
+      description: 'Sets prefix for helper'
+    <FP>.gamemode.creative:
+      description: 'Sets user to gamemode creative'
+      default: op
+    <FP>.gamemode.survival:
+      description: 'Sets user to survival creative'
+      default: op
+    <FP>.gamemode.adventure:
+      description: 'Sets user to adventure creative'
+      default: op
+    <FP>.gamemode.spectator:
+      description: 'Sets user to spectator creative'
+      default: op
+    <FP>.agamemode:
+      description: 'Allows admins to set other players gamemode'
+      default: op
+    <FP>.fly:
+      description: 'Allows user to toggle fly mode'
+      default: op
+    <FP>.afly:
+      description: 'Allows Admins to toggle fly mode for other users'
+      default: op
+    <FP>.vanish.see:
+      description: 'Allows Admins to see other vanished users.'
+      default: op
+    <FP>.vanish:
+      description: 'Allows staff to vanish'
+      default: op
+    <FP>.pweather:
+      description: 'Allows users to change local weather'
+      default: op
+    <FP>.heal:
+      description: 'Allows users to heal'
+      default: op
+    <FP>.aheal:
+      description: 'Allows users to heal other users'
+      default: op
+    <FP>.workbench:
+      description: 'Allows users to use a crafting table'
+      default: op
+    <FP>.enderchest:
+      description: 'Allows users to use thier enderchest'
+      default: op
+    <FP>.aenderchest:
+      description: 'Allows a Admin to open someone elses enderchest'
+      default: op
+    <FP>.staff:
+      description: 'Allows staff to be shown in the staff list'
+      default: op
+    <FP>.clearinven:
+      description: 'Allows user to clear inven'
+      default: op
+    <FP>.aclearinven:
+      description: 'Allows user to clear another players inven'
+      default: op
+    <FP>.invsee:
+      description: 'Allows user to see another players inven'
+      default: op
+    <FP>.awarp:
+      description: 'Allows a user to edit warps'
+      default: op
+    <FP>.getuuid:
+      description: 'Allows a admin to get a users uuid'
+      default: op
+    <FP>.skull:
+      description: 'Allows a user to get another users skull'
+      default: op
+    <FP>.akeepinven:
+      description: 'Allows a admin to toggle another players keep inven'
+      default: op
+    <FP>.fake:
+      description: 'Allows a admin to send a fake join/leave message'
+      default: op
+    <FP>.sudo:
+      description: 'Allows a admin to forces a player to run a command'
+      default: op
+    <FP>.seen:
+      description: 'Allows staff to see detail'
+    <FP>.back:
+      description: 'Allows users to return to last location'
+      default: op
+    <FP>.aback:
+      description: 'Allows admin to telport user to last location'
+      default: op
+    <FP>.broadcast:
+      description: 'Allows an admin to broadcast a message'
+      default: op
+    <FP>.tpo:
+      description: 'Allows an admin to force tp to someone!'
+      default: op
+    <FP>.atptoggle:
+      description: 'Allows an admin to toggle tpa requests'
+      default: op
+    <FP>.god:
+      description: 'Allows user to toggle god mode'
+      default: op
+    <FP>.agod:
+      description: 'Allows Admins to toggle god mode for other users'
+      default: op
+    <FP>.home.unlimited:
+      description: 'Allows a user to set unlimted homes'
+      default: op
+    <FP>.home.ahome:
+      description: 'Allows a increase/decrease a players home limit'
+      default: op
+    <FP>.tpa:
+      description: 'Allows use tpa commands'
+      default: op
+    <FP>.hat:
+      description: 'Allows use hat commands'
+    <FP>.BC:
+      description: 'Access to talk in builder chat'
+      default: op
+    <FP>.BC.R:
+      description: 'Access to view builder chat messages'
+      default: op
+    prefix.twitch:
+      description: 'Access to twitch rank'
+    prefix.youtube:
+      description: 'Access to youtube rank'
+    <FP>.bypass.playerlimit:
+      description: 'Bypass player limit'
+    <FP>.thor:
+      description: 'Alows admin to smite players'
+    <FP>.prefix:
+      description: 'Gives player access to all prefix commands'
+    <FP>.apcustom:
+      description: 'Ability to set a custom prefix'
+    <FP>.speed:
+      description: 'Ability to set flying/walking speed'
+    <FP>.restoreinven:
+          description: 'Ability to restore a players inventory'
+    <FP>.ptime:
+      description: 'Allows users to change local time'
+      default: op
+    <FP>.toggleendportal:
+      description: 'Allows admins to toggle the end portal on and off'
+      default: op
+    <FP>.togglesleepbypass:
+      description: 'Allows admins to toggle sleep bypass on and off'
+      default: op
