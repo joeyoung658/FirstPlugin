@@ -128,12 +128,19 @@ public class PlayerJoin implements Listener {
                 return true;
             }
 
-            if (player.hasPermission("prefix.mega")) {
-                PlayerNameData.changedata(player, "prefix", "&f[&bVIP&f]&e");
-                player.setPlayerListName(ChatColor.translateAlternateColorCodes('&', "&f[&bVIP&f]&6")  + ChatColor.RESET + player.getName());
-                //player.setPlayerListName(ChatColor.YELLOW + player.getName());
-                return true;
-            }
+//            if (player.hasPermission("prefix.king")) {
+//                //PlayerNameData.changedata(player, "prefix", "&f[&5King&f]&e");
+//                player.setPlayerListName(ChatColor.translateAlternateColorCodes('&', "&f[&5King&f]&e")  + ChatColor.RESET + player.getName());
+//                //player.setPlayerListName(ChatColor.YELLOW + player.getName());
+//                return true;
+//            }
+//
+//            if (player.hasPermission("prefix.queen")) {
+//               // PlayerNameData.changedata(player, "prefix", "&f[&dQueen&f]&e");
+//                player.setPlayerListName(ChatColor.translateAlternateColorCodes('&', "&f[&dQueen&f]&e")  + ChatColor.RESET + player.getName());
+//                //player.setPlayerListName(ChatColor.YELLOW + player.getName());
+//                return true;
+//            }
 
 
         }
@@ -144,7 +151,7 @@ public class PlayerJoin implements Listener {
             }
 
             if (player.getName().contains("XploderB")) {
-                player.setPlayerListName(ChatColor.translateAlternateColorCodes('&', "&f[&aC.Manager&f]&b")  + ChatColor.RESET + player.getName());
+                player.setPlayerListName(ChatColor.translateAlternateColorCodes('&', "&f[&6S.Manager&f]&b")  + ChatColor.RESET + player.getName());
                 return true;
             }
 

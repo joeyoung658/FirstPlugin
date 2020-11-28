@@ -16,9 +16,9 @@ public class Info implements CommandExecutor {
         if (cmd.getName().equalsIgnoreCase("vote")) {
                 sender.sendMessage(ChatColor.YELLOW + "=====================Voting!=====================");
                 sender.sendMessage(ChatColor.GOLD + "You can vote on each website daily!");
-                sender.sendMessage(ChatColor.DARK_PURPLE + "Vote Link 1" + ChatColor.GREEN + "- http://bit.ly/2Kv8fny");
-                sender.sendMessage(ChatColor.DARK_PURPLE + "Vote Link 2" + ChatColor.GREEN + "- http://bit.ly/2WVVynB");
-                sender.sendMessage(ChatColor.DARK_PURPLE + "Vote Link 3" + ChatColor.GREEN + "- http://bit.ly/2Iv9sJk");
+                sender.sendMessage(ChatColor.DARK_PURPLE + "Vote Link 1" + ChatColor.GREEN + "- https://shorturl.at/uCDJ9");
+                sender.sendMessage(ChatColor.DARK_PURPLE + "Vote Link 2" + ChatColor.GREEN + "- https://shorturl.at/txS17");
+                sender.sendMessage(ChatColor.DARK_PURPLE + "Vote Link 3" + ChatColor.GREEN + "- https://shorturl.at/bxPV8");
                 sender.sendMessage(ChatColor.YELLOW + "==================================================");
 
                 return true;
@@ -35,9 +35,8 @@ public class Info implements CommandExecutor {
         }
         if (cmd.getName().equalsIgnoreCase("donate")) {
                 sender.sendMessage("---------------" + ChatColor.YELLOW + "Donating!" + ChatColor.WHITE + "--------------------");
-                sender.sendMessage(ChatColor.DARK_PURPLE + "Donation Packages" + ChatColor.GREEN + " - http://www.allace.co.uk/store/");
+                sender.sendMessage(ChatColor.DARK_PURPLE + "Donation Packages" + ChatColor.GREEN + " - https://allace.tebex.io");
                 sender.sendMessage(ChatColor.AQUA + "Click the link to find out more!");
-                sender.sendMessage(ChatColor.RED + "Please note that all donations go towards the server only");
                 sender.sendMessage("-------------------------------------------------");
                 return true;
         }

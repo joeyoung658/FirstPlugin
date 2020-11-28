@@ -13,13 +13,14 @@ import org.bukkit.entity.Player;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.util.UUID;
 
 /**
  * Created by josep on 06/09/2017.
  */
 public class rtp implements CommandExecutor {
 
-    public static Map<Player, Long> rtpdelay = new HashMap<>();
+    public static Map<UUID, Long> rtpdelay = new HashMap<>();
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String alias, String[] args) {
@@ -42,8 +43,8 @@ public class rtp implements CommandExecutor {
             }
 
             long lastuse;
-            if (rtpdelay.containsKey(player)) {
-                lastuse = rtpdelay.get(player);
+            if (rtpdelay.containsKey(player.getUniqueId())) {
+                lastuse = rtpdelay.get(player.getUniqueId());
             } else {
                 lastuse = 0;
             }
@@ -55,7 +56,7 @@ public class rtp implements CommandExecutor {
 
             if (!(player.isOp())) {
                 if (remaining >= 3600) {
-                    rtpdelay.put(player, System.currentTimeMillis());
+                    rtpdelay.put(player.getUniqueId(), System.currentTimeMillis());
                 } else {
                     long mins = (3600 - remaining)/60;
                     sender.sendMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ") + ChatColor.AQUA + "Please wait " + mins + " minutes before using rtp again!");
@@ -63,7 +64,7 @@ public class rtp implements CommandExecutor {
                 }
             }
             } else {
-                rtpdelay.put(player, System.currentTimeMillis());
+                rtpdelay.put(player.getUniqueId(), System.currentTimeMillis());
             }
             int x;
             int z;

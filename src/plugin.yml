@@ -251,12 +251,10 @@ commands:
       description: 'Sets prefix for builder'
     prefix.helper:
       description: 'Sets prefix for helper'
-    prefix.diamond:
-      description: 'Sets prefix for admin'
-    prefix.gold:
-      description: 'Sets prefix for builder'
-    prefix.iron:
-      description: 'Sets prefix for helper'
+    prefix.queen:
+      description: 'Sets prefix for queen'
+    prefix.king:
+      description: 'Sets prefix for king'
     prefix.botm:
       description: 'Sets prefix for builder'
     prefix.top_voter:
