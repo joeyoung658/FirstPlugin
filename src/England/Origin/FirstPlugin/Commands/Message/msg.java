@@ -39,7 +39,6 @@ public class msg implements CommandExecutor {
                     sender.sendMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ") +ChatColor.DARK_RED + args[0] + " is not online!");
                     return false;
                 }
-
                 String playername;
                 if (!(sender instanceof Player)) {
                     playername = sender.getName();
@@ -56,7 +55,6 @@ public class msg implements CommandExecutor {
                 sender.sendMessage(ChatColor.YELLOW + "[" + ChatColor.AQUA + "me"  + ChatColor.YELLOW + " -> " + ChatColor.AQUA + target.getDisplayName() + ChatColor.YELLOW + "] " + ChatColor.RESET + ChatColor.translateAlternateColorCodes('&', b.toString()));
                 target.sendMessage(ChatColor.YELLOW + "[" + ChatColor.AQUA +  playername + ChatColor.YELLOW + " -> " + ChatColor.AQUA + "me" + ChatColor.YELLOW + "] " + ChatColor.RESET + ChatColor.translateAlternateColorCodes('&', b.toString()));
             }
-
         }
         return false;
     }

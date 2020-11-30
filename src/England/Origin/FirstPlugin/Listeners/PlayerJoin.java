@@ -145,16 +145,16 @@ public class PlayerJoin implements Listener {
 
         }
 
-            if (player.getName().contains("Monderp")) {
-                player.setPlayerListName(ChatColor.translateAlternateColorCodes('&', "&f[&aC.Manager&f]&b")  + ChatColor.RESET + player.getName());
-                return true;
-            }
-
-            if (player.getName().contains("XploderB")) {
-                player.setPlayerListName(ChatColor.translateAlternateColorCodes('&', "&f[&6S.Manager&f]&b")  + ChatColor.RESET + player.getName());
-                return true;
-            }
-
+//            if (player.getName().contains("Monderp")) {
+//                player.setPlayerListName(ChatColor.translateAlternateColorCodes('&', "&f[&aC.Manager&f]&b")  + ChatColor.RESET + player.getName());
+//                return true;
+//            }
+//
+//            if (player.getName().contains("XploderB")) {
+//                player.setPlayerListName(ChatColor.translateAlternateColorCodes('&', "&f[&6S.Manager&f]&b")  + ChatColor.RESET + player.getName());
+//                return true;
+//            }
+//
             if (player.getName().contains("Origin658")) {
                 player.setPlayerListName(ChatColor.translateAlternateColorCodes('&', "&f[&4Dev&f]&b")  + ChatColor.RESET + player.getName());
                 return true;

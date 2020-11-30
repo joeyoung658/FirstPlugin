@@ -168,7 +168,7 @@ commands:
       description: Builder Chat
   togglepvp:
       description: Enables user to toggle pvp mode
-      aliases: [pvpon,pvpoff,pvpenable,pvpdisbale,enablepvp,disablepvp]
+      aliases: [pvpon,pvpoff,pvpenable,pvpdisable,enablepvp,disablepvp]
   voteperks:
       description: View all the rewards from voting
   censor:

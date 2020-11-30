@@ -26,10 +26,14 @@ public class Teleporting {
 
         if (Bukkit.getWorld(worldname).getBlockAt(checkblock).isEmpty() ) {
            telto.setY(telto.getBlockY() + 2);
-       }
+        }
 
         telto.setX(telto.getBlockX() + 0.5);
         telto.setZ(telto.getBlockZ() + 0.5);
+
+        if (!(Bukkit.getWorld(worldname).getChunkAt(telto).isLoaded())){
+            Bukkit.getWorld(worldname).getChunkAt(telto).load();
+        }
 
 
         if (!(player.hasPermission("<FP>.BYPASS.TPCOOL"))) {

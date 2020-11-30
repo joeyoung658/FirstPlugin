@@ -68,5 +68,7 @@ public class PlayerNameData {
     public static void namesetter(Player player){
         player.setDisplayName(ChatColor.translateAlternateColorCodes('&', checkforprefix(player.getPlayer())  +
                 checkfornick(player.getPlayer()) + "&r"));
+        player.setPlayerListName(ChatColor.translateAlternateColorCodes('&', checkforprefix(player.getPlayer())  +
+                checkfornick(player.getPlayer()) + "&r"));
     }
 }

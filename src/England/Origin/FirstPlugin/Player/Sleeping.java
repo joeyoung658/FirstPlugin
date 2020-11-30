@@ -42,10 +42,9 @@ public class Sleeping implements Listener {
             return;
         }
 
-
         int theAmountOfPeopleRequiredToSleep =
                 ((Main.instance.getServer().getOnlinePlayers().size()
-                        - (afkplayers.size() + vanishtoggle.size())) / 2);
+                        - (afkplayers.size() + vanishtoggle.size() + endAndNetherPlayers())) / 2);
 
 
         if (theAmountOfPlayersInBed >= theAmountOfPeopleRequiredToSleep){
@@ -82,4 +81,17 @@ public class Sleeping implements Listener {
         return time < 12300 || time > 23850;
     }
 
+    private int endAndNetherPlayers() {
+        int end = 0;
+        int nether = 0;
+        for (Player p : Bukkit.getOnlinePlayers()) {
+            if (p.getLocation().getWorld().getName().contains("end")){
+                end = end + 1;
+            }
+            if (p.getLocation().getWorld().getName().contains("nether")){
+                nether = nether + 1;
+            }
+        }
+        return end + nether;
+    }
 }

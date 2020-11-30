@@ -49,7 +49,11 @@ public class back implements CommandExecutor {
                         int z = GetData.filegetdataint(target, "back.z");
                         float yaw = GetData.filegetdataint(target, "back.yaw");
                         float pitch = GetData.filegetdataint(target, "back.pitch");
+
+
+
                         Bukkit.getPlayer(args[0]).teleport(new Location(Bukkit.getWorld(worldname), x, y, z, yaw, pitch));
+
                         sender.sendMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ")  +ChatColor.AQUA + "You have sent " + target.getDisplayName() + ChatColor.AQUA + " back to their last location!");
                         target.sendMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ")  +ChatColor.GRAY + "An Admin has teleported you to your last location!");
                     } else {
