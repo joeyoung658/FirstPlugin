@@ -9,6 +9,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.scheduler.BukkitTask;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -66,42 +68,59 @@ public class rtp implements CommandExecutor {
             } else {
                 rtpdelay.put(player.getUniqueId(), System.currentTimeMillis());
             }
-            int x;
-            int z;
-            Location rtp = null;
 
-
-            while (true) {
-                while (rtp == null) {
-                    x = randomValue(20000);
-                    z = randomValue(20000);
-                    rtp = getAboveGroundLoc(player.getWorld(), x, z);
-
+            getRTPLocation(player, result -> {
+                if (result == null){
+                    sender.sendMessage("Error");
+                    return;
                 }
-                if (liqSafe(rtp)==true){
-                    break;
-                } else {
-                    rtp = null;
-                }
-            }
-
-
-            //rtp.setY(rtp.getBlockY()+2);
-
-
-            rtp.setY(rtp.getBlockY()+7);
-            rtp.setX(rtp.getBlockX()+0.5);
-            rtp.setZ(rtp.getBlockZ()+0.5);
-            player.teleport(rtp);
-
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ") + ChatColor.AQUA + "You have been randomly teleported!");
+                player.teleport(result);
+                player.sendMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ") + ChatColor.AQUA + "You have been randomly teleported!");
+            });
         }
-
         return true;
     }
 
 
+    public interface RTPLocationCallBack {
+        void onQueryDone(Location result);
+    }
 
+
+    public static void getRTPLocation(final Player player,
+                                      final RTPLocationCallBack callback){
+        Bukkit.getScheduler().runTaskAsynchronously(Main.instance, new Runnable() {
+            @Override
+            public void run() {
+                int x;
+                int z;
+                Location rtp = null;
+                while (true) {
+                    while (rtp == null) {
+                        x = randomValue(20000);
+                        z = randomValue(20000);
+                        rtp = getAboveGroundLoc(player.getWorld(), x, z);
+
+                    }
+                    if (liqSafe(rtp)==true){
+                        break;
+                    } else {
+                        rtp = null;
+                    }
+                }
+                rtp.setY(rtp.getBlockY()+7);
+                rtp.setX(rtp.getBlockX()+0.5);
+                rtp.setZ(rtp.getBlockZ()+0.5);
+                Location finalRtp = rtp;
+                Bukkit.getScheduler().runTask(Main.instance, new Runnable() {
+                    @Override
+                    public void run() {
+                        callback.onQueryDone(finalRtp);
+                    }
+                });
+            }
+        });
+    }
 
 
     private static int randomValue(int bound){

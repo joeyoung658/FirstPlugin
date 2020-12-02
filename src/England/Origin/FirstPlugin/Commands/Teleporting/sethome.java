@@ -11,6 +11,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,9 @@ import java.util.Set;
 public class sethome implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (cmd.getName().equalsIgnoreCase("sethome")) {
+
+
+                //todo run async
 
                 if (args.length == 1) {
                     if (!(sender instanceof Player)) {
@@ -44,22 +48,25 @@ public class sethome implements CommandExecutor {
                             }
                         }
 
-                        String worldname = player.getLocation().getWorld().getName();
-                        float x = player.getLocation().getBlockX();
-                        float y = player.getLocation().getBlockY();
-                        float z = player.getLocation().getBlockZ();
-                        float yaw = player.getLocation().getYaw();
-                        float pitch = player.getLocation().getPitch();
 
+                        new BukkitRunnable(){
+                            @Override
+                            public void run() {
+                                String worldname = player.getLocation().getWorld().getName();
+                                float x = player.getLocation().getBlockX();
+                                float y = player.getLocation().getBlockY();
+                                float z = player.getLocation().getBlockZ();
+                                float yaw = player.getLocation().getYaw();
+                                float pitch = player.getLocation().getPitch();
 
-                        HomeData.SetHomeDataString(player, args[0], "world", worldname);
-                        HomeData.SetHomeDataFloat(player, args[0], "x", x);
-                        HomeData.SetHomeDataFloat(player, args[0], "y", y);
-                        HomeData.SetHomeDataFloat(player, args[0], "z", z);
-                        HomeData.SetHomeDataFloat(player, args[0], "yaw", yaw);
-                        HomeData.SetHomeDataFloat(player, args[0], "pitch", pitch);
-
-
+                                HomeData.SetHomeDataString(player, args[0], "world", worldname);
+                                HomeData.SetHomeDataFloat(player, args[0], "x", x);
+                                HomeData.SetHomeDataFloat(player, args[0], "y", y);
+                                HomeData.SetHomeDataFloat(player, args[0], "z", z);
+                                HomeData.SetHomeDataFloat(player, args[0], "yaw", yaw);
+                                HomeData.SetHomeDataFloat(player, args[0], "pitch", pitch);
+                            }
+                        }.runTaskAsynchronously(Main.instance);
 
                         sender.sendMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ") +ChatColor.AQUA + "New home (" + args[0] + ") created successfully");
                     }

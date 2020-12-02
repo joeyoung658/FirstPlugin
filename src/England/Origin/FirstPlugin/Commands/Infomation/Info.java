@@ -16,9 +16,9 @@ public class Info implements CommandExecutor {
         if (cmd.getName().equalsIgnoreCase("vote")) {
                 sender.sendMessage(ChatColor.YELLOW + "=====================Voting!=====================");
                 sender.sendMessage(ChatColor.GOLD + "You can vote on each website daily!");
-                sender.sendMessage(ChatColor.DARK_PURPLE + "Vote Link 1" + ChatColor.GREEN + "- https://shorturl.at/uCDJ9");
-                sender.sendMessage(ChatColor.DARK_PURPLE + "Vote Link 2" + ChatColor.GREEN + "- https://shorturl.at/txS17");
-                sender.sendMessage(ChatColor.DARK_PURPLE + "Vote Link 3" + ChatColor.GREEN + "- https://shorturl.at/bxPV8");
+                sender.sendMessage(ChatColor.DARK_PURPLE + "Vote Link 1" + ChatColor.GREEN + "- https://minecraft-server-list.com/server/469930/vote/");
+                sender.sendMessage(ChatColor.DARK_PURPLE + "Vote Link 2" + ChatColor.GREEN + "- https://minecraftservers.org/server/599554");
+                sender.sendMessage(ChatColor.DARK_PURPLE + "Vote Link 3" + ChatColor.GREEN + "- https://minecraft-mp.com/server-s273448");
                 sender.sendMessage(ChatColor.YELLOW + "==================================================");
 
                 return true;

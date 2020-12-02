@@ -70,6 +70,8 @@ public class afk implements CommandExecutor, Listener {
     }
 
 
+
+    //Memory leak?
     public static void isafk() {
         Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.instance, new Runnable() {
             @Override
