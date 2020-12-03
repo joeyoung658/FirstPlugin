@@ -34,8 +34,8 @@ public class nick implements CommandExecutor {
                             String nick = "~"+args[0];
 
                             if (!(sender.isOp())) {
-                                if (!(nick.toCharArray().length < 30)) {
-                                    sender.sendMessage(ChatColor.AQUA + "Nick needs to be less than 30 characters");
+                                if (!(nick.toCharArray().length < 32)) {
+                                    sender.sendMessage(ChatColor.AQUA + "Nick needs to be less than 32 characters");
                                     return true;
                                 }
                             }

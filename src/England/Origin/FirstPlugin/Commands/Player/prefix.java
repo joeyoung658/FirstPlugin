@@ -14,6 +14,10 @@ import java.util.List;
 /**
  * Created by josep on 27/05/2017.
  */
+
+
+
+//todo improve usability
 public class prefix implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {

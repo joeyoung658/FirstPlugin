@@ -19,6 +19,8 @@ import java.util.Map;
  */
 public class msg implements CommandExecutor {
 
+
+    //todo ensure this isn't causing a memory leak and msg are being removed
     public static Map<Player, Player> msg = new HashMap<>();
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {

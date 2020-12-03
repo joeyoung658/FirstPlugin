@@ -12,15 +12,13 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 
-import static England.Origin.FirstPlugin.Player.SaveInven.SavePlayerInven;
-
 
 public class DMessage implements Listener {
     @EventHandler
     public void onDeath(PlayerDeathEvent event) {
         event.setDeathMessage(ChatColor.RED + event.getDeathMessage());
         Player player = event.getEntity();
-        SavePlayerInven(player);
+//        SavePlayerInven(player);
         if (!(PlayerNameData.filegetdata(player, "keepinven") == null)) {
                 event.setKeepInventory(true);
                 event.getDrops().clear();

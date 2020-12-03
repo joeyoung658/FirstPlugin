@@ -9,6 +9,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -34,6 +35,31 @@ public class PlayerLeave implements Listener {
 
     @EventHandler
     public void onPlayerQuitEvent(PlayerQuitEvent event) {
+
+        new BukkitRunnable(){
+            @Override
+            public void run() {
+                if (!(PlayerNameData.filegetdata((event.getPlayer()), "god") == null)) {
+                    ChangeData.changedatac((event.getPlayer()), "god", null);
+                    event.getPlayer().setInvulnerable(false);
+                }
+                ChangeData.changedatac(event.getPlayer(), "logoutlocation.worldname", event.getPlayer().getLocation().getWorld().getName());
+                ChangeData.changedataf(event.getPlayer(), "logoutlocation.x", event.getPlayer().getLocation().getBlockX());
+                ChangeData.changedataf(event.getPlayer(), "logoutlocation.y", event.getPlayer().getLocation().getBlockY());
+                ChangeData.changedataf(event.getPlayer(), "logoutlocation.z", event.getPlayer().getLocation().getBlockZ());
+                ChangeData.changedataf(event.getPlayer(), "logoutlocation.yaw", event.getPlayer().getLocation().getYaw());
+                ChangeData.changedataf(event.getPlayer(), "logoutlocation.pitch", event.getPlayer().getLocation().getPitch());
+                ChangeData.changedatac(event.getPlayer(), "LastSeenDate", dateFormat.format(date));
+
+                ignored.remove(event.getPlayer());
+                playerwhoingores.remove(event.getPlayer());
+                if (afkplayers.contains(event.getPlayer())) {afkplayers.remove(event.getPlayer());}
+                if (afkcheck.containsKey(event.getPlayer())) {afkcheck.remove(event.getPlayer());}
+                if (Main.instance.pvptoggle.contains(event.getPlayer().getName())) {
+                    Main.instance.pvptoggle.remove(event.getPlayer().getName());
+                }
+            }
+        }.runTaskAsynchronously(Main.instance);
         if (!(PlayerNameData.filegetdata(event.getPlayer(), "vanish") == null)) {
             vanish.onvanish(event.getPlayer());
             vanishtoggle.remove(event.getPlayer());
@@ -41,34 +67,5 @@ public class PlayerLeave implements Listener {
         } else {
             event.setQuitMessage(ChatColor.translateAlternateColorCodes('&', "&7[&4-&7] ") + event.getPlayer().getDisplayName() + ChatColor.RED + " disconnected!");
         }
-        if (!(PlayerNameData.filegetdata((event.getPlayer()), "god") == null)) {
-            ChangeData.changedatac((event.getPlayer()), "god", null);
-            event.getPlayer().setInvulnerable(false);
-        }
-        ChangeData.changedatac(event.getPlayer(), "logoutlocation.worldname", event.getPlayer().getLocation().getWorld().getName());
-        ChangeData.changedataf(event.getPlayer(), "logoutlocation.x", event.getPlayer().getLocation().getBlockX());
-        ChangeData.changedataf(event.getPlayer(), "logoutlocation.y", event.getPlayer().getLocation().getBlockY());
-        ChangeData.changedataf(event.getPlayer(), "logoutlocation.z", event.getPlayer().getLocation().getBlockZ());
-        ChangeData.changedataf(event.getPlayer(), "logoutlocation.yaw", event.getPlayer().getLocation().getYaw());
-        ChangeData.changedataf(event.getPlayer(), "logoutlocation.pitch", event.getPlayer().getLocation().getPitch());
-
-
-        ChangeData.changedatac(event.getPlayer(), "LastSeenDate", dateFormat.format(date));
-
-        ignored.remove(event.getPlayer());
-        playerwhoingores.remove(event.getPlayer());
-        if (afkplayers.contains(event.getPlayer())) {afkplayers.remove(event.getPlayer());}
-        if (afkcheck.containsKey(event.getPlayer())) {afkcheck.remove(event.getPlayer());}
-       // if ((pvpeo.contains(event.getPlayer().getUniqueId()))) {event.getPlayer().getInventory().clear();
-          //  Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "spawn " + event.getPlayer().getName()); pvpeo.remove(event.getPlayer().getUniqueId()); }
-
-
-       // PlayTimeData.PlayTimeLS(event.getPlayer());
-
-        if (Main.instance.pvptoggle.contains(event.getPlayer().getName())) {
-            Main.instance.pvptoggle.remove(event.getPlayer().getName());
-        }
-
     }
-
 }

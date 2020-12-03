@@ -168,8 +168,6 @@ public class Main extends JavaPlugin implements Listener {
         //this.getCommand("tiptoggle").setExecutor(new tiptoggle());
         //voteperks
         this.getCommand("voteperks").setExecutor(new voteperks());
-        //censor
-        //this.getCommand("censor").setExecutor(new Censor());
         //thor
         this.getCommand("thor").setExecutor(new thor());
         //tableflip
@@ -177,8 +175,6 @@ public class Main extends JavaPlugin implements Listener {
         this.getCommand("unflip").setExecutor(new tableflip());
         //speed
         this.getCommand("speed").setExecutor(new speed());
-        //restoreinve
-        this.getCommand("restoreinven").setExecutor(new restoreInven());
         //ptime
         this.getCommand("ptime").setExecutor(new ptime());
         //serverconnections

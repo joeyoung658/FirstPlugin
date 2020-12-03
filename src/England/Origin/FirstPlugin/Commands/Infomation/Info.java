@@ -40,20 +40,6 @@ public class Info implements CommandExecutor {
                 sender.sendMessage("-------------------------------------------------");
                 return true;
         }
-//        if (cmd.getName().equalsIgnoreCase("twitter")) {
-//                sender.sendMessage(ChatColor.AQUA + "---------------------Twitter!---------------------");
-//                sender.sendMessage(ChatColor.DARK_PURPLE + "See the latest news and updates!");
-//                sender.sendMessage(ChatColor.DARK_PURPLE + "Follow us at - @ ");
-//                sender.sendMessage(ChatColor.GREEN + "link - ");
-//                sender.sendMessage(ChatColor.AQUA + "-------------------------------------------------");
-//        }
-//        if (cmd.getName().equalsIgnoreCase("build")) {
-//                sender.sendMessage(ChatColor.AQUA + "--------------Build of the month!-----------------");
-//                sender.sendMessage(ChatColor.DARK_PURPLE + "Join our build of the month competition!");
-//                sender.sendMessage(ChatColor.DARK_PURPLE + "For a chance to be featured on our home page + MORE!");
-//                sender.sendMessage(ChatColor.GREEN + "http://www.exhibit-minecraft.co.uk/forums/showthread.php?tid=93");
-//                sender.sendMessage(ChatColor.AQUA + "-----------------------------------------------");
-//        }
         if (cmd.getName().equalsIgnoreCase("discord")) {
                 sender.sendMessage(ChatColor.LIGHT_PURPLE + "---------------------Discord!---------------------");
                 sender.sendMessage(ChatColor.AQUA + "Join the chat and check out our discord!");
@@ -67,13 +53,6 @@ public class Info implements CommandExecutor {
             sender.sendMessage(ChatColor.AQUA + "Join us at - https://www.allace.co.uk");
             sender.sendMessage(ChatColor.LIGHT_PURPLE + "-------------------------------------------------");
         }
-
-//        if (cmd.getName().equalsIgnoreCase("steam")) {
-//            sender.sendMessage(ChatColor.LIGHT_PURPLE + "---------------------Steam!---------------------");
-//            sender.sendMessage(ChatColor.AQUA + "Join the chat and check out our steam group!");
-//            sender.sendMessage(ChatColor.AQUA + "http://steamcommunity.com/groups/exhibitMinecraft");
-//            sender.sendMessage(ChatColor.LIGHT_PURPLE + "------------------------------------------------");
-//        }
         return true;
     }
 

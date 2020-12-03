@@ -19,7 +19,8 @@ public class ServerFull implements Listener {
                 event.setResult(PlayerLoginEvent.Result.ALLOWED);
             } else {
                 event.setKickMessage(ChatColor.RED + "The server is currently full!" + System.lineSeparator() +
-                        ChatColor.AQUA + "Please try again later!" + System.lineSeparator() + ChatColor.GREEN + "To pass the time checkout our discord! - https://discord.gg/YgNU3Pr");
+                        ChatColor.AQUA + "Please try again later!" + System.lineSeparator() + ChatColor.GREEN + "To pass the time checkout our discord!"
+                        + System.lineSeparator() + "The Link can be found on our website!");
             }
         }
     }

@@ -1,14 +1,11 @@
 package England.Origin.FirstPlugin.Commands.Player;
 
-import England.Origin.FirstPlugin.Player.SaveInven;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-
-import static England.Origin.FirstPlugin.Player.SaveInven.SavePlayerInven;
 
 /**
  * Created by Joes_room on 22/12/2016.
@@ -25,7 +22,7 @@ public class clearinven implements CommandExecutor {
                     return true;
                 }
                 if (sender.hasPermission("<FP>.clearinven")) {
-                    SavePlayerInven(((Player) sender));
+//                    SavePlayerInven(((Player) sender));
                     ((Player) sender).getInventory().clear();
                     sender.sendMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ")  +ChatColor.AQUA + "All items cleared from " + ((Player) sender).getDisplayName());
                 } else {
@@ -38,7 +35,7 @@ public class clearinven implements CommandExecutor {
                         sender.sendMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ")  +ChatColor.RED + args[0] + " is not online!");
                         return false;
                     }
-                    SavePlayerInven(target);
+//                    SavePlayerInven(target);
                     target.getInventory().clear();
                     sender.sendMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ")  +ChatColor.AQUA + "All items cleared from " + target.getDisplayName());
                 } else {

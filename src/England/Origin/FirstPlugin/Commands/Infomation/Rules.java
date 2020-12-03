@@ -43,46 +43,9 @@ public class Rules implements CommandExecutor {
                         sender.sendMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ") +ChatColor.DARK_RED + "Error:" + ChatColor.WHITE + " " + args[0] + " is an incorrect page number! Only pages 1-3 are valid");
                     }
                 }
-
             return true;
         }
         return false;
-
-
-
     }
-
 }
-
-
-
-
-
-/*
-public class CommandList implements CommandExecutor {
-    @Override
-        public boolean onCommand(CommandSender sender, Command command, String alias, String[] args) {
-            Player player = (Player) sender;
-            if (alias.equalsIgnoreCase("heal")) {
-                if (args.length == 0) {
-//Player only typed '/heal' so lets heal them back!
-                    player.setHealth(20.0);
-                    sender.sendMessage(ChatColor.RED + "You have been healed");
-                } else {
-//Player typed something more
-                    Player target = Bukkit.getPlayerExact(args[0]);
-                    if (target == null) {
-//Target is not online
-                        player.sendMessage("Your target " + args[0] + " is not online!");
-                    } else {
-//Targets online
-                        player.sendMessage("You've healed " + args[0]);
-                        target.setHealth(20.0);
-                    }
-                }
-            }
-        return true;
-        }
-    }
-*/
 

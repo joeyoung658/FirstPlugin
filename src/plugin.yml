@@ -171,8 +171,6 @@ commands:
       aliases: [pvpon,pvpoff,pvpenable,pvpdisable,enablepvp,disablepvp]
   voteperks:
       description: View all the rewards from voting
-  censor:
-      description: Allows players to block certain words from thier chat
   thor:
       description: Allows players to smite another
   tableflip:
@@ -181,8 +179,6 @@ commands:
       description: Allows a player to unflip a table
   speed:
       description: Allows a player to set thier flying/walking speed
-  restoreinven:
-      description: Ability to restore a players inventory
   ptime:
       description: THis command enables the change of player time
   rtp:
