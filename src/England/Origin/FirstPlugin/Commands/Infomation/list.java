@@ -33,16 +33,25 @@ public class list implements CommandExecutor {
             StringBuilder stringOnlinev = new StringBuilder();
             for (int i = 0; i < onlineplayers.size(); i++) {
                 if (PlayerNameData.filegetdata(onlineplayers.get(i), "vanish") == null) {
-                    stringOnline.append(onlineplayers.get(i).getDisplayName() + ", ");
+                    if (afkplayers.contains(onlineplayers.get(i))) {
+                        if (i == onlineplayers.size()) {
+                        stringOnline.append(ChatColor.translateAlternateColorCodes('&', "&f[&7AFK&f]") +  onlineplayers.get(i).getDisplayName() + ".");
+                        } else {
+                            stringOnline.append(ChatColor.translateAlternateColorCodes('&', "&f[&7AFK&f]") +  onlineplayers.get(i).getDisplayName() + ", ");
+                        }
+                    } else {
+                        if (i == onlineplayers.size()) {
+                            stringOnline.append(onlineplayers.get(i).getDisplayName() + ".");
+                        } else {
+                            stringOnline.append(onlineplayers.get(i).getDisplayName() + ", ");
+                        }
+                    }
                 } else {
+                    stringOnlinev.append(onlineplayers.get(i).getDisplayName() + ", ");
                     current -= 1;
                 }
 
-                if (afkplayers.contains(onlineplayers.get(i))) {
-                    stringOnlinev.append(ChatColor.translateAlternateColorCodes('&', "&f[&7AFK&f]") +  onlineplayers.get(i).getDisplayName() + ", ");
-                } else {
-                    stringOnlinev.append(onlineplayers.get(i).getDisplayName() + ", ");
-                }
+
             }
 
             if (sender.hasPermission("<FP>.vanish.see>")) {

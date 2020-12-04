@@ -13,14 +13,12 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
-import org.bukkit.event.player.PlayerTeleportEvent;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-
 
 /**
  * Created by josep on 27/01/2017.
@@ -71,32 +69,17 @@ public class afk implements CommandExecutor, Listener {
 
 
 
-    //Memory leak?
-    public static void isafk() {
-        Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.instance, new Runnable() {
-            @Override
-            public void run() {
-                for (Player p : Bukkit.getOnlinePlayers()) {
-                    if (!(afkplayers.contains(p))) {
-                        if (afkcheck.containsKey(p)) {
-                            if (p.getLocation().equals(afkcheck.get(p))) {
-                                afkplayers.add(p);
-                                afkcheck.remove(p);
-                                if (PlayerNameData.filegetdata(p, "vanish") == null) {
-                                    Bukkit.broadcastMessage(ChatColor.GRAY + "* " + p.getDisplayName() + ChatColor.GRAY + " is now afk!");
-                                }
-                            } else {
-                                afkcheck.put(p, p.getLocation());
-                            }
-                        } else {
-                            afkcheck.put(p, p.getLocation());
-                        }
-                    }
-                }
-                isafk();
-            }
-        }, 20l * 60 * 5);
-    }
+//    //Memory leak?
+//    public static void isafk() {
+//        Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.instance, new Runnable() {
+//            @Override
+//            public void run() {
+//
+//
+//
+//            }
+//        }, 20l * 60 * 5);
+//    }
 
     private void afkremove(Player player){
         if (afkplayers.contains(player)) {

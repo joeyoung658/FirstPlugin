@@ -34,6 +34,7 @@ public class PlayerJoin implements Listener {
     public void onPlayerJoinEvent(PlayerJoinEvent event) {
         PlayerData.PlayerDatac(event.getPlayer());
         BukkitTask updatePlayerFile = new updatePlayerFile(Main.instance, event.getPlayer()).runTaskAsynchronously(Main.instance);
+
         PlayerNameData.namesetter(event.getPlayer());
 
         if (!event.getPlayer().hasPlayedBefore()) {
