@@ -6,7 +6,7 @@ import England.Origin.FirstPlugin.Commands.Admin.*;
 import England.Origin.FirstPlugin.Commands.Containers.enderchest;
 import England.Origin.FirstPlugin.Commands.Containers.workbench;
 import England.Origin.FirstPlugin.Commands.Fun.skull;
-import England.Origin.FirstPlugin.Commands.Fun.suicide;
+import England.Origin.FirstPlugin.Commands.Fun.reSpawn;
 import England.Origin.FirstPlugin.Commands.Fun.tableflip;
 import England.Origin.FirstPlugin.Commands.Fun.thor;
 import England.Origin.FirstPlugin.Commands.Infomation.*;
@@ -73,7 +73,7 @@ public class Main extends JavaPlugin implements Listener {
         this.getCommand("poke").setExecutor(new Ping());
         this.getCommand("pardon").setExecutor(new Ping());
         this.getCommand("fp-reload").setExecutor(new reloadconfig());
-        this.getCommand("suicide").setExecutor(new suicide());
+        this.getCommand("respawn").setExecutor(new reSpawn());
         this.getCommand("nick").setExecutor(new nick());
         this.getCommand("removenick").setExecutor(new nick());
         this.getCommand("gamemode").setExecutor(new gamemodes());
@@ -142,6 +142,6 @@ public class Main extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new ServerFull(), this);
         getServer().getPluginManager().registerEvents(new endPortal(this), this);
         getServer().getPluginManager().registerEvents(new Sleeping(), this);
-        getServer().getPluginManager().registerEvents(new reSpawn(), this);
+        getServer().getPluginManager().registerEvents(new England.Origin.FirstPlugin.Listeners.reSpawn(), this);
     }
 }

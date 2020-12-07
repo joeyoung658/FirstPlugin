@@ -36,6 +36,7 @@ public class PlayerJoin implements Listener {
         BukkitTask updatePlayerFile = new updatePlayerFile(Main.instance, event.getPlayer()).runTaskAsynchronously(Main.instance);
 
         PlayerNameData.namesetter(event.getPlayer());
+        tabWriting(event.getPlayer());
 
         if (!event.getPlayer().hasPlayedBefore()) {
             ChangeData.changedataf(event.getPlayer(), "homeamount", 3);
@@ -77,5 +78,13 @@ public class PlayerJoin implements Listener {
             }
         }
     }
+
+
+    private void tabWriting(Player player){
+        player.setPlayerListHeader(ChatColor.BOLD + "" + ChatColor.RED +  "play.allace.co.uk" +
+                System.lineSeparator() + ChatColor.BLUE + "/website" + "     " + "/discord");
+        player.setPlayerListFooter(ChatColor.AQUA + "Type /vote to earn great rewards!");
+    }
+
 }
 

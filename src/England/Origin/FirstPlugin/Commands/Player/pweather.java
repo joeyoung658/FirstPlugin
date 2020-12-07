@@ -40,7 +40,7 @@ public class pweather implements CommandExecutor{
                             return true;
                         } else if (args[0].equalsIgnoreCase("reset")) {
                             player.resetPlayerWeather();
-                            sender.sendMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ") +ChatColor.AQUA + "You have re-synced your weather with the servers wether!");
+                            sender.sendMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ") +ChatColor.AQUA + "You have re-synced your weather with the servers weather!");
                             return true;
                         } else {
                         sender.sendMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ") +ChatColor.RED + "Incorrent arguments /pweather [Clear/Rain/Reset]");

@@ -16,64 +16,59 @@ import static England.Origin.FirstPlugin.Commands.Player.afk.afkplayers;
  * Created by Joes_room on 18/12/2016.
  */
 public class list implements CommandExecutor {
-    private ArrayList<Player> onlineplayers = new ArrayList<>();
+    //private ArrayList<Player> onlineplayers = new ArrayList<>();
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (cmd.getName().equalsIgnoreCase("list")) {
-            int max = Main.instance.getServer().getMaxPlayers();
             int current = Main.instance.getServer().getOnlinePlayers().size();
-            int acurrent = current;
             if (current == 0) {
                 sender.sendMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ") +ChatColor.AQUA + "Currently there are no players online!");
                 return false;
             }
-            for(Player online : Main.instance.getServer().getOnlinePlayers()) {
-                onlineplayers.add(online);
-            }
-            StringBuilder stringOnline = new StringBuilder();
-            StringBuilder stringOnlinev = new StringBuilder();
-            for (int i = 0; i < onlineplayers.size(); i++) {
-                if (PlayerNameData.filegetdata(onlineplayers.get(i), "vanish") == null) {
-                    if (afkplayers.contains(onlineplayers.get(i))) {
-                        if (i == onlineplayers.size()) {
-                        stringOnline.append(ChatColor.translateAlternateColorCodes('&', "&f[&7AFK&f]") +  onlineplayers.get(i).getDisplayName() + ".");
-                        } else {
-                            stringOnline.append(ChatColor.translateAlternateColorCodes('&', "&f[&7AFK&f]") +  onlineplayers.get(i).getDisplayName() + ", ");
-                        }
-                    } else {
-                        if (i == onlineplayers.size()) {
-                            stringOnline.append(onlineplayers.get(i).getDisplayName() + ".");
-                        } else {
-                            stringOnline.append(onlineplayers.get(i).getDisplayName() + ", ");
-                        }
-                    }
-                } else {
-                    stringOnlinev.append(onlineplayers.get(i).getDisplayName() + ", ");
-                    current -= 1;
-                }
-
-
-            }
-
+            int max = Main.instance.getServer().getMaxPlayers();
             if (sender.hasPermission("<FP>.vanish.see>")) {
-                sender.sendMessage(ChatColor.AQUA + "There are currently, " + acurrent + "/" + max + " players online!");
-                sender.sendMessage(ChatColor.YELLOW + "All online players: " + ChatColor.RESET + stringOnlinev.toString());
+                sender.sendMessage(ChatColor.AQUA + "There are currently, " + getPlayersOnline(true) + "/" + max + " players online!");
+                sender.sendMessage(ChatColor.YELLOW + "All online players: " + ChatColor.RESET + getOnlinePlayers(true).toString());
                 sender.sendMessage(ChatColor.GRAY + "Type /staff to view all online staff!");
-                onlineplayers.clear();
                 return false;
             }
-
-            if (current == 0){
-                sender.sendMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ") +ChatColor.AQUA + "There are no staff currently online!");
-                onlineplayers.clear();
-                return false;
-            }
-            sender.sendMessage(ChatColor.AQUA + "There are currently, " + current + "/" + max + "  players online!");
-            sender.sendMessage(ChatColor.YELLOW + "All online players: " + ChatColor.RESET + stringOnline.toString());
+            sender.sendMessage(ChatColor.AQUA + "There are currently, " + getPlayersOnline(false) + "/" + max + "  players online!");
+            sender.sendMessage(ChatColor.YELLOW + "All online players: " + ChatColor.RESET + getOnlinePlayers(false).toString());
             sender.sendMessage(ChatColor.GRAY + "Type /staff to view all online staff!");
-
-            onlineplayers.clear();
 
         }
         return true;
+    }
+
+
+    private StringBuilder getOnlinePlayers(Boolean includeVanished){
+        StringBuilder playersOnline = new StringBuilder();
+        for (Player online : Main.instance.getServer().getOnlinePlayers()) {
+            if (!(PlayerNameData.filegetdata(online, "vanish") == null)) {
+                if (includeVanished) {
+                    playersOnline.append(ChatColor.translateAlternateColorCodes('&', "&f[&7Vanished&f]") + online.getDisplayName() + ", ");
+                }
+            } else {
+                if (afkplayers.contains(online)) {
+                    playersOnline.append(ChatColor.translateAlternateColorCodes('&', "&f[&7AFK&f]") +  online.getDisplayName() + ", ");
+                } else {
+                    playersOnline.append(online.getDisplayName() + ", ");
+                }
+            }
+        }
+        return playersOnline;
+    }
+
+    private int getPlayersOnline(Boolean includeVanished){
+        int onlinePlayersRaw = Main.instance.getServer().getOnlinePlayers().size();
+        if (includeVanished) {
+            int onlineVanished = 0;
+            for(Player online : Main.instance.getServer().getOnlinePlayers()) {
+                if (PlayerNameData.filegetdata(online, "vanish") != null) {
+                    onlineVanished++;
+                }
+            }
+            return onlinePlayersRaw - onlineVanished;
+        }
+        return onlinePlayersRaw;
     }
 }

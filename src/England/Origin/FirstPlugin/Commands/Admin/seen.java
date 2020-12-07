@@ -1,4 +1,4 @@
-package England.Origin.FirstPlugin.Commands.Player;
+package England.Origin.FirstPlugin.Commands.Admin;
 
 import England.Origin.FirstPlugin.Data.GetData;
 import England.Origin.FirstPlugin.Data.PlayerNameData;
@@ -24,8 +24,6 @@ public class seen implements CommandExecutor {
     @SuppressWarnings("deprecation")
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-
-
         if (cmd.getName().equalsIgnoreCase("seen")) {
             if (sender.hasPermission("<FP>.seen")) {
                 if (args.length == 1){
@@ -93,7 +91,6 @@ public class seen implements CommandExecutor {
                              }
                         }
 
-
                         sender.sendMessage("-----" + ChatColor.YELLOW + args[0] + ChatColor.LIGHT_PURPLE + "'s Player information;" + ChatColor.RESET +"-----");
                         sender.sendMessage(ChatColor.AQUA + "- First Joined(GMT): " + ChatColor.WHITE + firstjoin);
                         sender.sendMessage(ChatColor.AQUA + "- Last Seen(GMT): " + ChatColor.WHITE + lastseen);
@@ -102,9 +99,6 @@ public class seen implements CommandExecutor {
                         sender.sendMessage(ChatColor.AQUA + "- Keep Inventory: " + ChatColor.WHITE + keepinven);
                         if (sender.hasPermission("<FP>.avanish")) { sender.sendMessage(ChatColor.AQUA + "- Vanished: " + ChatColor.WHITE + vanished);}
                         sender.sendMessage(ChatColor.AQUA + "- Log Out Location: " + ChatColor.WHITE +  logoutlocation);
-
-
-
 
                         return false;
 
@@ -142,7 +136,7 @@ public class seen implements CommandExecutor {
                         sender.sendMessage(ChatColor.AQUA + "- Join Time(GMT): " + ChatColor.WHITE + lastjointime);
                         sender.sendMessage(ChatColor.AQUA + "- IP Address: " + ChatColor.WHITE +  PlayerNameData.filegetdata(target.getPlayer(), "ipAddress"));
                         sender.sendMessage(ChatColor.AQUA + "- Gamemode: " + ChatColor.WHITE + target.getGameMode());
-                        sender.sendMessage(ChatColor.AQUA + "- XP: " + ChatColor.WHITE + target.getExp());
+                        sender.sendMessage(ChatColor.AQUA + "- XP: " + ChatColor.WHITE + target.getExpToLevel());
                         if (sender.isOp()) { sender.sendMessage(ChatColor.AQUA + "- Health: " + ChatColor.WHITE + target.getHealth());}
                         sender.sendMessage(ChatColor.AQUA + "- Keep Inventory: " + ChatColor.WHITE + okeepinven);
                         if (sender.hasPermission("<FP>.avanish")) { sender.sendMessage(ChatColor.AQUA + "- Vanished: " + ChatColor.WHITE + ovanished);}

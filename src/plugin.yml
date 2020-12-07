@@ -21,9 +21,6 @@ commands:
   rules:
       description: Server Rules
       usage: /rules
-  tips:
-      description: Server Tips
-      usage: /tips
   FP-Reload:
       description: Reload FP Config
   prefix:
@@ -64,8 +61,8 @@ commands:
   poke:
       description: Pokes the server
       useage: /<command>
-  suicide:
-      description: Enables a user to kill them selfs.
+  respawn:
+      description: Sets players health to 0, allowing a player to respawn
   nick:
       description: Enables a user to give them selfs a nick name.
   removenick:

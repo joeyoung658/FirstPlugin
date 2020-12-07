@@ -34,6 +34,13 @@ public class Sleeping implements Listener {
         if (Main.instance.sleepToggleBypass == 0){
             return;
         }
+        int onlinePlayers = Main.instance.getServer().getOnlinePlayers().size();
+
+        if (afkplayers != null) {
+            if (onlinePlayers == afkplayers.size()) {
+                return;
+            }
+        }
         if (!(sleepingplayers.contains(event.getPlayer()))) {
             sleepingplayers.add(event.getPlayer());
         }
@@ -43,7 +50,7 @@ public class Sleeping implements Listener {
         }
 
         int theAmountOfPeopleRequiredToSleep =
-                ((Main.instance.getServer().getOnlinePlayers().size()
+                ((onlinePlayers
                         - (afkplayers.size() + vanishtoggle.size() + endAndNetherPlayers())) / 2);
 
 
