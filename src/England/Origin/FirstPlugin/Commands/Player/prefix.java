@@ -64,25 +64,16 @@ public class prefix implements CommandExecutor {
                     return true;
 
                 } else {
-
                     sender.sendMessage(ChatColor.RED + "Incorrect arguments!");
                     sender.sendMessage(ChatColor.AQUA + "/prefix remove - Removes your prefix");
                     sender.sendMessage(ChatColor.AQUA + "/prefix restore - Restores your prefix");
                     sender.sendMessage(ChatColor.AQUA + "/prefix custom [CustomPrefix] - Ability to add a custom prefix");
-
-
                 }
             }else if (args.length == 2) {
-
-
-
                     if (args[0].equalsIgnoreCase("custom")) { //Enables user to set a custom prefix
-                    if (sender.hasPermission("<FP>.apcustom")) {
-
                             if (args[1] == null) {
-                                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&e[&4Server&e]&f ") + ChatColor.AQUA  + " Incorrect arguments. Type /prefix for help.");
+                                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&e[&4Server&e]&f ") + ChatColor.AQUA + " Incorrect arguments. Type /prefix for help.");
                             }
-
                             String e = args[1];
                             if (!(sender.hasPermission("<FP>.BYPASSCP"))) {
                                 if (e.toLowerCase().contains("admin") || e.toLowerCase().contains("helper") || e.toLowerCase().contains("builder") || e.toLowerCase().contains("moderator") ||
@@ -114,28 +105,17 @@ public class prefix implements CommandExecutor {
                             } else {
                                 sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&e[&4Server&e]&f ") + ChatColor.AQUA + "Prefix needs to be less than 15 characters");
                             }
-
-                    } else {
-
-                        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&e[&4Server&e]&f ") + ChatColor.DARK_RED + "You do not have permission todo this.");
-                    }
                 } else {
-
                         sender.sendMessage(ChatColor.RED + "Incorrect arguments!");
                         sender.sendMessage(ChatColor.AQUA + "/prefix remove - Removes your prefix");
                         sender.sendMessage(ChatColor.AQUA + "/prefix restore - Restores your prefix");
                         sender.sendMessage(ChatColor.AQUA + "/prefix custom [CustomPrefix] - Ability to add a custom prefix");
-
-
                     }
             } else {
-
                     sender.sendMessage(ChatColor.RED + "Incorrect arguments!");
                     sender.sendMessage(ChatColor.AQUA + "/prefix remove - Removes your prefix");
                     sender.sendMessage(ChatColor.AQUA + "/prefix restore - Restores your prefix");
                     sender.sendMessage(ChatColor.AQUA + "/prefix custom [CustomPrefix] - Ability to add a custom prefix");
-
-
                 }
 
         }
