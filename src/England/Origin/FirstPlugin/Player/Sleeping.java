@@ -9,12 +9,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerBedEnterEvent;
 import org.bukkit.event.player.PlayerBedLeaveEvent;
 
-
 import java.util.ArrayList;
 
-
-import static England.Origin.FirstPlugin.Commands.Player.afk.afkplayers;
 import static England.Origin.FirstPlugin.Commands.Admin.vanish.vanishtoggle;
+import static England.Origin.FirstPlugin.Commands.Player.afk.afkplayers;
 
 
 

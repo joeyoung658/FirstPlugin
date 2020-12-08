@@ -2,7 +2,6 @@ package England.Origin.FirstPlugin.Commands.Admin;
 
 import England.Origin.FirstPlugin.Data.GetData;
 import England.Origin.FirstPlugin.Data.PlayerNameData;
-import England.Origin.FirstPlugin.Main;
 import org.bukkit.BanList;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -12,9 +11,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -137,6 +133,7 @@ public class seen implements CommandExecutor {
                         sender.sendMessage(ChatColor.AQUA + "- IP Address: " + ChatColor.WHITE +  PlayerNameData.filegetdata(target.getPlayer(), "ipAddress"));
                         sender.sendMessage(ChatColor.AQUA + "- Gamemode: " + ChatColor.WHITE + target.getGameMode());
                         sender.sendMessage(ChatColor.AQUA + "- XP: " + ChatColor.WHITE + target.getExpToLevel());
+                        sender.sendMessage(ChatColor.AQUA + "- World: " + ChatColor.WHITE + target.getWorld().getName());
                         if (sender.isOp()) { sender.sendMessage(ChatColor.AQUA + "- Health: " + ChatColor.WHITE + target.getHealth());}
                         sender.sendMessage(ChatColor.AQUA + "- Keep Inventory: " + ChatColor.WHITE + okeepinven);
                         if (sender.hasPermission("<FP>.avanish")) { sender.sendMessage(ChatColor.AQUA + "- Vanished: " + ChatColor.WHITE + ovanished);}

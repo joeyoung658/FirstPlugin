@@ -1,13 +1,5 @@
 package England.Origin.FirstPlugin.Player;
 
-import org.bukkit.Location;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
-
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Created by josep on 31/07/2017.
  */

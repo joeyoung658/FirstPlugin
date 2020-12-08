@@ -6,7 +6,6 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
 import java.io.File;
-import java.security.Key;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;

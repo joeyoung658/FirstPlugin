@@ -1,7 +1,6 @@
 package England.Origin.FirstPlugin.Commands.Player;
 
 import org.bukkit.ChatColor;
-import org.bukkit.WeatherType;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

@@ -1,7 +1,6 @@
 package England.Origin.FirstPlugin.Data;
 
 import England.Origin.FirstPlugin.Main;
-import org.bukkit.entity.Player;
 
 /**
  * Created by josep on 19/06/2017.

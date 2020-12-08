@@ -8,8 +8,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.util.ArrayList;
-
 import static England.Origin.FirstPlugin.Commands.Player.afk.afkplayers;
 
 /**

@@ -1,7 +1,6 @@
 package England.Origin.FirstPlugin.Commands.Player;
 
 import England.Origin.FirstPlugin.Data.PlayerNameData;
-import England.Origin.FirstPlugin.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -13,7 +12,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
-
 
 import java.util.ArrayList;
 import java.util.HashMap;

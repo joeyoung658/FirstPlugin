@@ -1,7 +1,6 @@
 package England.Origin.FirstPlugin.Commands.Message;
 
 
-import England.Origin.FirstPlugin.Commands.Message.msg;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

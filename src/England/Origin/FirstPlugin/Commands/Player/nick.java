@@ -1,7 +1,6 @@
 package England.Origin.FirstPlugin.Commands.Player;
 
 import England.Origin.FirstPlugin.Data.ChangeData;
-
 import England.Origin.FirstPlugin.Data.PlayerNameData;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -9,9 +8,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Joes_room on 07/12/2016.

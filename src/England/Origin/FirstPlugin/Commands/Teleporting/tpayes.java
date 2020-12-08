@@ -8,8 +8,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-
-
 import static England.Origin.FirstPlugin.Commands.Teleporting.tpa.tparequests;
 import static England.Origin.FirstPlugin.Commands.Teleporting.tpahere.tpahererequests;
 

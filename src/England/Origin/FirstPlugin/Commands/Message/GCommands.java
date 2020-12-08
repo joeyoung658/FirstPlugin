@@ -11,8 +11,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.io.Console;
-
 
 public class GCommands implements CommandExecutor {
 

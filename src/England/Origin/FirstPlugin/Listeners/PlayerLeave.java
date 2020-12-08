@@ -15,11 +15,11 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static England.Origin.FirstPlugin.Commands.Player.afk.afkcheck;
-import static England.Origin.FirstPlugin.Commands.Player.afk.afkplayers;
+import static England.Origin.FirstPlugin.Commands.Admin.vanish.vanishtoggle;
 import static England.Origin.FirstPlugin.Commands.Message.ignore.ignored;
 import static England.Origin.FirstPlugin.Commands.Message.ignore.playerwhoingores;
-import static England.Origin.FirstPlugin.Commands.Admin.vanish.vanishtoggle;
+import static England.Origin.FirstPlugin.Commands.Player.afk.afkcheck;
+import static England.Origin.FirstPlugin.Commands.Player.afk.afkplayers;
 
 
 /**

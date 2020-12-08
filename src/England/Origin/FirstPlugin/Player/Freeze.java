@@ -1,10 +1,8 @@
 package England.Origin.FirstPlugin.Player;
 
 import org.bukkit.ChatColor;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 
 import java.util.ArrayList;

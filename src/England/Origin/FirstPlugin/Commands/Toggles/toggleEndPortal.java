@@ -1,11 +1,9 @@
 package England.Origin.FirstPlugin.Commands.Toggles;
 
-import England.Origin.FirstPlugin.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class toggleEndPortal implements CommandExecutor {

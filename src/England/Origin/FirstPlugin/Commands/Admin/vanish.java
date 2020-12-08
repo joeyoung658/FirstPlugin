@@ -10,7 +10,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**

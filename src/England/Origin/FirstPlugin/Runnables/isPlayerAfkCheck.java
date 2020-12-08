@@ -8,7 +8,6 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
-
 import static England.Origin.FirstPlugin.Commands.Player.afk.afkplayers;
 
 public class isPlayerAfkCheck extends BukkitRunnable {

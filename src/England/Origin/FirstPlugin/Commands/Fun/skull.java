@@ -1,23 +1,15 @@
 package England.Origin.FirstPlugin.Commands.Fun;
 
-import com.mojang.authlib.GameProfile;
-import com.mojang.authlib.properties.Property;
-import net.minecraft.server.v1_16_R2.Item;
-import net.minecraft.server.v1_16_R2.TileEntitySkull;
-import org.bukkit.*;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
-import org.yaml.snakeyaml.external.biz.base64Coder.Base64Coder;
-
-import java.lang.annotation.Target;
-import java.lang.reflect.Field;
-import java.util.Base64;
-import java.util.UUID;
 
 /**
  * Created by josep on 07/01/2017.

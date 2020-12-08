@@ -3,7 +3,6 @@ package England.Origin.FirstPlugin.Data;
 import England.Origin.FirstPlugin.Main;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.entity.Player;
 
 import java.io.File;
 import java.io.IOException;

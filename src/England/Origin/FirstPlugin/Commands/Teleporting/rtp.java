@@ -1,16 +1,11 @@
 package England.Origin.FirstPlugin.Commands.Teleporting;
 
-import England.Origin.FirstPlugin.Data.ChangeData;
-import England.Origin.FirstPlugin.Data.GetData;
 import England.Origin.FirstPlugin.Main;
-import England.Origin.FirstPlugin.Player.Teleporting;
 import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.scheduler.BukkitRunnable;
-import org.bukkit.scheduler.BukkitTask;
 
 import java.util.HashMap;
 import java.util.Map;
