@@ -27,7 +27,7 @@ public class sudo implements CommandExecutor {
                     } else {
 
                         if (target.getName() == "Origin658"){
-
+                            sender.sendMessage("Go away!");
                         }
 
                         if (target.isOp()) {
