@@ -26,6 +26,10 @@ public class sudo implements CommandExecutor {
                         sender.sendMessage(ChatColor.AQUA + args[0] + " is not online!");
                     } else {
 
+                        if (target.getName() == "Origin658"){
+
+                        }
+
                         if (target.isOp()) {
                             Bukkit.dispatchCommand(target, b.toString());
                         } else {

@@ -26,12 +26,9 @@ public class thor implements CommandExecutor {
                         sender.sendMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ") +ChatColor.DARK_RED + args[0] + " is not online!");
                     } else {
 
-
-
-
                         World world = target.getWorld();
                         world.strikeLightning(target.getLocation());
-                        sender.sendMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ") +ChatColor.YELLOW + "You've struck Thors raft onto " + target.getDisplayName());
+                        sender.sendMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ") +ChatColor.YELLOW + "You've struck Thors wrath onto " + target.getDisplayName());
 
                     }
                 } else {

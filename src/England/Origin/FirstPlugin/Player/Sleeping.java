@@ -32,9 +32,13 @@ public class Sleeping implements Listener {
         if (Main.instance.sleepToggleBypass == 0){
             return;
         }
+        String playerWorld = event.getPlayer().getWorld().getName();
+        if (playerWorld.contains("end") || playerWorld.contains("nether")) {
+            return;
+        }
         int onlinePlayers = Main.instance.getServer().getOnlinePlayers().size();
 
-        if (afkplayers != null) {
+        if (afkplayers.size() != 0) {
             if (onlinePlayers == afkplayers.size()) {
                 return;
             }
