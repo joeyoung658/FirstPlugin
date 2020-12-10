@@ -52,8 +52,7 @@ public class Sleeping implements Listener {
         }
 
         int theAmountOfPeopleRequiredToSleep =
-                ((onlinePlayers
-                        - (afkplayers.size() + vanishtoggle.size() + endAndNetherPlayers())) / 2);
+                ((onlinePlayers - afkplayers.size() - vanishtoggle.size() - endAndNetherPlayers()) / 2);
 
 
         if (theAmountOfPlayersInBed >= theAmountOfPeopleRequiredToSleep){
