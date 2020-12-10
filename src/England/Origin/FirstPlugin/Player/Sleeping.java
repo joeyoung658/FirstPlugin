@@ -68,6 +68,11 @@ public class Sleeping implements Listener {
             Bukkit.getServer().getWorld("AllAce").setTime(newTime);
             Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ") +ChatColor.AQUA + "At least 50%" +
                     " of the server was sleeping, so the night has passed.");
+            Main.instance.getLogger().info("onlinePlayers" + onlinePlayers);
+            Main.instance.getLogger().info("vanishtoggle" + vanishtoggle.size());
+            Main.instance.getLogger().info("endAndNetherPlayers" + endAndNetherPlayers());
+            Main.instance.getLogger().info("theAmountOfPeopleRequiredToSleep - " + theAmountOfPeopleRequiredToSleep);
+
         } else {
             int x = (theAmountOfPeopleRequiredToSleep);
             int y = sleepingplayers.size();
