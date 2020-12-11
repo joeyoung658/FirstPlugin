@@ -56,7 +56,7 @@ public class tpayes implements CommandExecutor{
                         return false;
                     }
                     tpahererequests.remove(sender);
-                    tpafrom.sendMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ") +((Player) sender).getDisplayName() + ChatColor.AQUA +  " has accepted your request for them to telport to you!");
+                    tpafrom.sendMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ") +((Player) sender).getDisplayName() + ChatColor.AQUA +  " has accepted your request for them to teleport to you!");
                     sender.sendMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ") +ChatColor.AQUA + "You have accepted the teleport request! Please stand by.");
 
                     Back.backsave(((Player) sender).getPlayer());

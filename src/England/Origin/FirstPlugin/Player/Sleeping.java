@@ -3,13 +3,22 @@ package England.Origin.FirstPlugin.Player;
 import England.Origin.FirstPlugin.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Monster;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerBedEnterEvent;
 import org.bukkit.event.player.PlayerBedLeaveEvent;
+import org.bukkit.scheduler.BukkitTask;
+import org.bukkit.util.BoundingBox;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.function.Predicate;
 
 import static England.Origin.FirstPlugin.Commands.Admin.vanish.vanishtoggle;
 import static England.Origin.FirstPlugin.Commands.Player.afk.afkplayers;
@@ -42,6 +51,9 @@ public class Sleeping implements Listener {
             if (onlinePlayers == afkplayers.size()) {
                 return;
             }
+        }
+        if (isMonstersNearBy(event.getPlayer())){
+            return;
         }
         if (!(sleepingplayers.contains(event.getPlayer()))) {
             sleepingplayers.add(event.getPlayer());
@@ -106,5 +118,25 @@ public class Sleeping implements Listener {
             }
         }
         return end + nether;
+    }
+
+    private boolean isMonstersNearBy(Player player){
+        final Boolean[] isMonstersNearBy = {false};
+        Bukkit.getScheduler().runTaskAsynchronously(Main.instance, new Runnable() {
+            @Override
+            public void run() {
+                double x = player.getLocation().getX();
+                double y = player.getLocation().getY();
+                double z = player.getLocation().getBlockZ();
+                BoundingBox box = new BoundingBox(x-8, y-4, z-8, x+8, y+4, z+8);
+                Collection<Entity> entitiesAroundPlayerLoc =  player.getWorld().getNearbyEntities(box);
+                for (Entity en : entitiesAroundPlayerLoc) {
+                    if (en instanceof Monster){
+                        isMonstersNearBy[0] = true;
+                    }
+                }
+            }
+        });
+        return isMonstersNearBy[0];
     }
 }
