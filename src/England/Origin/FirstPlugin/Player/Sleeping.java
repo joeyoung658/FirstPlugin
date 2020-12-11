@@ -126,10 +126,10 @@ public class Sleeping implements Listener {
 
     private void debugLogEvent(int onlinePlayers, int theAmountOfPeopleRequiredToSleep){
         Main.instance.getLogger().info("onlinePlayers" + onlinePlayers);
+        Main.instance.getLogger().info("afktoggle" + afkplayers.size());
         Main.instance.getLogger().info("vanishtoggle" + vanishtoggle.size());
         Main.instance.getLogger().info("endAndNetherPlayers" + endAndNetherPlayers());
         Main.instance.getLogger().info("theAmountOfPeopleRequiredToSleep - " + theAmountOfPeopleRequiredToSleep);
-
     }
 
     private int endAndNetherPlayers() {
