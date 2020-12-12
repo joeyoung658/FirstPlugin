@@ -58,11 +58,32 @@ public class Sleeping implements Listener {
 
         int theAmountOfPeopleRequiredToSleep =
                 ((onlinePlayers - afkplayers.size() - vanishtoggle.size() - endAndNetherPlayers()) / 2);
-
         World world = event.getPlayer().getWorld();
+
+
+        if (world.isThundering()) {
+            if (!(isDay())) {
+                if (theAmountOfPlayersInBed >= theAmountOfPeopleRequiredToSleep) {
+                    passStorm(world, false);
+                    setDay();
+                    debugLogEvent(onlinePlayers, theAmountOfPeopleRequiredToSleep);
+                    return;
+                } else {
+                    final int x = (theAmountOfPeopleRequiredToSleep);
+                    final int y = sleepingplayers.size();
+                    final int xy = x - y;
+                    event.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', "&e[&4Server&e]&f ") + ChatColor.AQUA + "There are not enough players" +
+                            " currently in bed. " + xy + " more players are needed in bed for the night and storm to pass.");
+                    return;
+                }
+            }
+        }
+
+
+
         if (world.isThundering()){
             if (theAmountOfPlayersInBed >= theAmountOfPeopleRequiredToSleep){
-                passStorm(world);
+                passStorm(world, true);
                 debugLogEvent(onlinePlayers,theAmountOfPeopleRequiredToSleep);
                 return;
             } else {
@@ -98,10 +119,13 @@ public class Sleeping implements Listener {
         }
     }
 
-    private void passStorm(World world){
+    private void passStorm(World world, boolean sendMsg){
+        world.setThundering(false);
         world.setStorm(false);
-        Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&' , "&e[&4Server&e]&f ") +ChatColor.AQUA + "At least 50%" +
-                " of the server was sleeping, so the storm has passed.");
+        if (sendMsg) {
+            Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', "&e[&4Server&e]&f ") + ChatColor.AQUA + "At least 50%" +
+                    " of the server was sleeping, so the storm has passed.");
+        }
     }
 
     private void setDay(){
