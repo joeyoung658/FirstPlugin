@@ -4,6 +4,11 @@ author: Origin
 main: England.Origin.FirstPlugin.Main
 api-version: 1.16
 commands:
+  shophelp:
+    description: Gain a understanding of ChestShops on AllAce
+  setspawn:
+    description: Sets the server world spawn
+    aliases: [spawnset]
   vote:
       description: This command shows the voting information.
       usage: /<command>
@@ -395,4 +400,7 @@ commands:
       default: op
     <FP>.togglesleepbypass:
       description: 'Allows admins to toggle sleep bypass on and off'
+      default: op
+    <FP>.setspawn:
+      description: 'Allows admins to set the world spawn'
       default: op

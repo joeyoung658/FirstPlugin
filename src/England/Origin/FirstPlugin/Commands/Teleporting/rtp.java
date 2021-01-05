@@ -170,8 +170,4 @@ public class rtp implements CommandExecutor {
         }
         return true;
     }
-
-    private static void storeLocation(Location location){
-        //Todo save cords and prevent other players from ending up in the same palce
-    }
 }

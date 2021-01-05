@@ -52,6 +52,13 @@ public class Info implements CommandExecutor {
             sender.sendMessage(ChatColor.AQUA + "Join us at - https://www.allace.co.uk");
             sender.sendMessage(ChatColor.LIGHT_PURPLE + "-------------------------------------------------");
         }
+
+        if (cmd.getName().equalsIgnoreCase("shophelp")){
+            sender.sendMessage(ChatColor.LIGHT_PURPLE + "---------------------Website!---------------------");
+            sender.sendMessage(ChatColor.AQUA + "For information on the rules and how to use the chest shops please see the link below!");
+            sender.sendMessage(ChatColor.AQUA + "Join us at - https://docs.google.com/document/d/1M2z5NSIDmzBptudswPeYfXg7Fge02aDXlzmocnICuqY/edit?usp=sharing");
+            sender.sendMessage(ChatColor.LIGHT_PURPLE + "-------------------------------------------------");
+        }
         return true;
     }
 

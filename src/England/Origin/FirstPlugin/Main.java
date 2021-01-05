@@ -59,12 +59,13 @@ public class Main extends JavaPlugin implements Listener {
         this.getCommand("colours").setExecutor(new Info());
         this.getCommand("discord").setExecutor(new Info());
         this.getCommand("website").setExecutor(new Info());
+        this.getCommand("shophelp").setExecutor(new Info());
         this.getCommand("rules").setExecutor(new Rules());
         this.getCommand("prefix").setExecutor(new prefix());
         this.getCommand("sc").setExecutor(new GCommands());
         this.getCommand("dc").setExecutor(new GCommands());
         this.getCommand("bc").setExecutor(new GCommands());
-        this.getCommand("spawn").setExecutor(new Spawn());
+        this.getCommand("spawn").setExecutor(new spawn());
         this.getCommand("ask").setExecutor(new Ask());
         this.getCommand("answer").setExecutor(new Ask());
         this.getCommand("ping").setExecutor(new Ping());
@@ -128,6 +129,7 @@ public class Main extends JavaPlugin implements Listener {
         this.getCommand("toggleendportal").setExecutor(new toggleEndPortal(this));
         this.getCommand("togglesleepbypass").setExecutor(new toggleSleepBypass(this));
         this.getCommand("getcords").setExecutor(new getPlayerLocation());
+        this.getCommand("setspawn").setExecutor(new setSpawn());
     }
     private void registerlistners(){
         getServer().getPluginManager().registerEvents(new DMessage(), this);
