@@ -25,7 +25,7 @@ public class Teleporting {
         checkblock.setY(checkblock.getBlockY() - 2);
 
         if (Bukkit.getWorld(worldname).getBlockAt(checkblock).isEmpty() ) {
-           telto.setY(telto.getBlockY() + 2);
+           telto.setY(telto.getBlockY() + 0.5);
         }
 
         telto.setX(telto.getBlockX() + 0.5);

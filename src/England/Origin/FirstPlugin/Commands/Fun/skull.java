@@ -16,10 +16,6 @@ import org.bukkit.inventory.meta.SkullMeta;
  */
 public class skull implements CommandExecutor {
 
-
-    //todo Fix the  below
-
-
     @SuppressWarnings( "deprecation" )
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (cmd.getName().equalsIgnoreCase("skull")) {
@@ -63,10 +59,4 @@ public class skull implements CommandExecutor {
         }
         return true;
     }
-
-
-    //https://gist.githubusercontent.com/Jofkos/79af290e94acdc7d7d5b/raw/cd724528c931ac31b7a9bb31c5a6b399d444cca8/GameProfileBuilder.java
-
-
-
 }

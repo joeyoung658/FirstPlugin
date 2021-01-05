@@ -78,9 +78,7 @@ public class Sleeping implements Listener {
                 }
             }
         }
-
-
-
+        
         if (world.isThundering()){
             if (theAmountOfPlayersInBed >= theAmountOfPeopleRequiredToSleep){
                 passStorm(world, true);

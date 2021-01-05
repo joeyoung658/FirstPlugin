@@ -8,8 +8,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 
-//todo migrate to Permissions sytem?
-
 /**
  * Created by josep on 16/01/2017.
  */
