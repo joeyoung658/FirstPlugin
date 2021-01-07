@@ -11,6 +11,7 @@ import England.Origin.FirstPlugin.Runnables.updatePlayerFile;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -42,7 +43,10 @@ public class PlayerJoin implements Listener {
             Bukkit.broadcastMessage(ChatColor.GREEN + event.getPlayer().getDisplayName() + ChatColor.GREEN +  " has joined the server for the first time!");
             ChangeData.changedatac(event.getPlayer(), "FirstJoinDate", dateFormat.format(date));
             event.getPlayer().sendMessage(ChatColor.AQUA + " Welcome to All Ace!");
-            event.getPlayer().teleport(new Location(Bukkit.getWorld("AllAce"),  -46, 104, -124, 2, 0));
+
+
+            event.getPlayer().teleport(Main.instance.getConfig().getLocation("spawn"));
+
             event.getPlayer().sendMessage(ChatColor.GOLD + "Start voting in order to start earning eCoins! Use /votes for more information.");
         } else {
             event.getPlayer().sendMessage(ChatColor.AQUA + "Welcome back " + event.getPlayer().getDisplayName() + ChatColor.AQUA + ", we've missed you!!");

@@ -20,6 +20,7 @@ public class setSpawn implements CommandExecutor {
             if (!sender.hasPermission("<FP>.setspawn")) return new serverMessages().sendPermError(sender);
             FileConfiguration configuration =  Main.instance.getConfig();
             configuration.set("spawn", ((Player) sender).getLocation());
+            Main.instance.saveConfig();
             sender.sendMessage(new serverMessages().getServerPrefix() + "Spawn has been set successfully!");
         }
         return false;
